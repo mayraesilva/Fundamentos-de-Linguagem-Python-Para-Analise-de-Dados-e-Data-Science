@@ -21,4 +21,4 @@ def jogo_da_forca():
     print('\n Bem-vinda(o) ao jogo da forca!')
     print('Adivinhe a palavra abaixo:\n')
 
-    palavras_possiveis = ['banana', 'uva', 'morango', 'manga', 'pera', ]
+    palavras_possiveis = ['banana', 'uva', 'morango', 'manga', 'pera', 'tangerina' ]
