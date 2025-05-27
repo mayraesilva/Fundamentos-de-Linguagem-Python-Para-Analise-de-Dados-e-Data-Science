@@ -28,11 +28,16 @@ def jogo_da_forca():
     possiveis_palavras = ['morango', 'laranja', 'uva']
     chances = 6
 
-    palavra_escolhida = random.choice(possiveis_palavras)
+    palavra_escolhida = random.choice(possiveis_palavras).upper()
 
     qts_letras = '_ ' * len(palavra_escolhida)
-
     print(qts_letras)
+
+    palavra = [letra for letra in palavra_escolhida]
+    letras_erradas = []
+
+    
+
 
 
 
