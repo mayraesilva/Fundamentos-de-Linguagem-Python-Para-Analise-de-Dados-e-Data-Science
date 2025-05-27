@@ -157,7 +157,7 @@ def jogo_da_forca():
 
     while chances >= 1:
         print(forca(erros))
-        print(f'Chances restantes: {chances}\n')
+        print(f'Chances restantes: {chances}')
         print('Letras erradas: ', *letras_erradas, sep=' - ')
         tentativa = input('\nQual letra gostaria de tentar? ').upper()
         #print(len(tentativa), 'teste')
