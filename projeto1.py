@@ -64,7 +64,9 @@ def jogo_da_forca():
         else:
             qts_letras += '_'
 
-    print(qts_letras)
+    
+    qts_letras = list(qts_letras)
+    print(''.join(qts_letras))
 
 
     palavra = [letra for letra in palavra_escolhida]
@@ -73,26 +75,45 @@ def jogo_da_forca():
     
 
     while chances >= 1:
+        print(f'Chances restantes: {chances}')
+        print('Letras erradas: ', *letras_erradas, sep=' - ')
         tentativa = input('Qual letra gostaria de tentar? ').upper()
-        print(len(tentativa), 'teste')
+        #print(len(tentativa), 'teste')
+
+        if len(tentativa) > 1:
+            print('Por favor, tente apenas uma letra por vez')
+            continue
+        
 
         try:
-            len(tentativa) == 1
+            if type(float(tentativa)) is float:
+                print('Apenas letras são permitidas')
+            continue
+        
+        except:
 
             if tentativa in palavra:
                 indices = [i for i, letra in enumerate(palavra) if letra == tentativa]
+                #print(indices)
 
                 for aparicao in indices:
                     qts_letras[aparicao] = tentativa
-                    print(qts_letras)
+
+                print(''.join(qts_letras))
+
+            else:
+                chances -= 1
+                print('Ops! Está letra não está presente na palavra!')
+                letras_erradas.append(tentativa)
+                
     
 
 
 
 
 
-        except:
-            print('Por favor, tente apenas uma letra por vez')
+        
+           
 
         
 
@@ -100,7 +121,7 @@ def jogo_da_forca():
 
 
 
-    #print(palavra)
+    print(palavra)
 
     
 
