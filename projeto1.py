@@ -185,12 +185,14 @@ def jogo_da_forca():
 
             elif tentativa in letras_erradas:
                 print('Você já tentou essa letra!')
+                print(''.join(qts_letras))
                 continue
 
             else:
                 chances -= 1
                 erros +=1
                 print('Ops! Está letra não está presente na palavra!\n')
+                print(''.join(qts_letras))
                 letras_erradas.append(tentativa)
 
             if '_' not in qts_letras:
