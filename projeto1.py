@@ -17,6 +17,26 @@ def limpa_tela():
 
 
 
+
+#Acessando o arquivo (file) (txt ou dic) e devolvendo uma lista de listas que contém strings
+def transform_the_file(file): #para escolher as palavras de um arquivo
+    open_the_file = open(file, 'r', encoding='utf-8')
+    file_read = open_the_file.readlines()
+    #print('Este é o arquivo antes de remover os excessos', file_read)
+    file_modified = []
+
+    for line in file_read:
+        file_modified.append(line.strip()) #remove the space and the \n in the beggining/end of string
+
+    print('Este é o arquivo após  a remoção ', file_modified)
+    
+    return file_modified
+
+
+
+
+
+
 def jogo_da_forca():
 
     limpa_tela()
@@ -39,6 +59,6 @@ def jogo_da_forca():
     
 
 
+transform_the_file('liniker_musicas.csv')
 
-
-jogo_da_forca()
+#jogo_da_forca()
