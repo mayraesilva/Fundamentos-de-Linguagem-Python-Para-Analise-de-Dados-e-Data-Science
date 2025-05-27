@@ -75,19 +75,19 @@ def jogo_da_forca():
     
 
     while chances >= 1:
-        print(f'Chances restantes: {chances}')
+        print(f'Chances restantes: {chances}\n')
         print('Letras erradas: ', *letras_erradas, sep=' - ')
-        tentativa = input('Qual letra gostaria de tentar? ').upper()
+        tentativa = input('\nQual letra gostaria de tentar? ').upper()
         #print(len(tentativa), 'teste')
 
         if len(tentativa) > 1:
-            print('Por favor, tente apenas uma letra por vez')
+            print('\nPor favor, tente apenas uma letra por vez')
             continue
         
 
         try:
             if type(float(tentativa)) is float:
-                print('Apenas letras são permitidas')
+                print('\nApenas letras são permitidas\n')
             continue
         
         except:
@@ -103,8 +103,17 @@ def jogo_da_forca():
 
             else:
                 chances -= 1
-                print('Ops! Está letra não está presente na palavra!')
+                print('Ops! Está letra não está presente na palavra!\n')
                 letras_erradas.append(tentativa)
+
+            if '_' not in qts_letras:
+                print('Parabéns, você conseguiu!\n')
+                print(f'A palavra ou termo era {palavra_escolhida}')
+                break
+    
+
+    if '_' in qts_letras:
+        print('Poxa, não foi dessa vez!')
                 
     
 
@@ -121,7 +130,7 @@ def jogo_da_forca():
 
 
 
-    print(palavra)
+    #print(palavra)
 
     
 
