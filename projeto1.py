@@ -45,13 +45,27 @@ def jogo_da_forca():
     print('\nBem-vinda(o) ao jogo da forca!')
     print('Adivinhe a palavra abaixo:\n')
 
-    possiveis_palavras = ['morango', 'laranja', 'uva']
+    possiveis_palavras = transform_the_file('liniker_musicas.csv') #pegando as possíveis palavras
+    
+
+    palavra_escolhida = random.choice(possiveis_palavras) 
+    print(palavra_escolhida)
+
+    
     chances = 6
+    qts_letras = ''
 
-    palavra_escolhida = random.choice(possiveis_palavras).upper()
+    for letra in palavra_escolhida:
 
-    qts_letras = '_ ' * len(palavra_escolhida)
+        if letra == ' ':
+            qts_letras += ' ' 
+
+        else:
+            qts_letras += '_'
+
     print(qts_letras)
+
+    
 
     palavra = [letra for letra in palavra_escolhida]
     letras_erradas = []
@@ -59,6 +73,6 @@ def jogo_da_forca():
     
 
 
-transform_the_file('liniker_musicas.csv')
 
-#jogo_da_forca()
+
+jogo_da_forca()
