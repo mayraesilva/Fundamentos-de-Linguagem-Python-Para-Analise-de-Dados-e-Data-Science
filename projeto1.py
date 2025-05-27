@@ -51,10 +51,11 @@ def jogo_da_forca():
     palavra_escolhida = random.choice(possiveis_palavras) 
     print(palavra_escolhida)
 
-    
+
     chances = 6
     qts_letras = ''
 
+    #Montando os traços
     for letra in palavra_escolhida:
 
         if letra == ' ':
@@ -65,10 +66,41 @@ def jogo_da_forca():
 
     print(qts_letras)
 
-    
 
     palavra = [letra for letra in palavra_escolhida]
+    
     letras_erradas = []
+    
+
+    while chances >= 1:
+        tentativa = input('Qual letra gostaria de tentar? ').upper()
+        print(len(tentativa), 'teste')
+
+        try:
+            len(tentativa) == 1
+
+            if tentativa in palavra:
+                indices = [i for i, letra in enumerate(palavra) if letra == tentativa]
+
+                for aparicao in indices:
+                    qts_letras[aparicao] = tentativa
+                    print(qts_letras)
+    
+
+
+
+
+
+        except:
+            print('Por favor, tente apenas uma letra por vez')
+
+        
+
+
+
+
+
+    #print(palavra)
 
     
 
