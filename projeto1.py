@@ -28,9 +28,89 @@ def transform_the_file(file): #para escolher as palavras de um arquivo
     for line in file_read:
         file_modified.append(line.strip()) #remove the space and the \n in the beggining/end of string
 
-    print('Este é o arquivo após  a remoção ', file_modified)
+    #print('Este é o arquivo após  a remoção ', file_modified)
     
     return file_modified
+
+
+
+def forca(erro):
+    bonequinhos = [
+    """
+     _______
+    |/      
+    |      
+    |      
+    |      
+    |     
+    |
+    =========
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |      
+    |      
+    |     
+    |
+    =========
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |       |
+    |       |
+    |     
+    |
+    =========
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |      \\|
+    |       |
+    |     
+    |
+    =========
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |      \\|/
+    |       |
+    |     
+    |
+    =========
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |      \\|/
+    |       |
+    |      / 
+    |
+    =========
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |      \\|/
+    |       |
+    |      / \\
+    |
+    =========
+    """
+]
+    
+    return bonequinhos[erro]
+
+
 
 
 
@@ -49,11 +129,12 @@ def jogo_da_forca():
     
 
     palavra_escolhida = random.choice(possiveis_palavras) 
-    print(palavra_escolhida)
+    #print(palavra_escolhida)
 
 
     chances = 6
     qts_letras = ''
+    erros = 0
 
     #Montando os traços
     for letra in palavra_escolhida:
@@ -75,6 +156,7 @@ def jogo_da_forca():
     
 
     while chances >= 1:
+        print(forca(erros))
         print(f'Chances restantes: {chances}\n')
         print('Letras erradas: ', *letras_erradas, sep=' - ')
         tentativa = input('\nQual letra gostaria de tentar? ').upper()
@@ -101,8 +183,13 @@ def jogo_da_forca():
 
                 print(''.join(qts_letras))
 
+            elif tentativa in letras_erradas:
+                print('Você já tentou essa letra!')
+                continue
+
             else:
                 chances -= 1
+                erros +=1
                 print('Ops! Está letra não está presente na palavra!\n')
                 letras_erradas.append(tentativa)
 
@@ -113,24 +200,12 @@ def jogo_da_forca():
     
 
     if '_' in qts_letras:
+        print(forca(erros))
         print('Poxa, não foi dessa vez!')
                 
     
 
 
-
-
-
-        
-           
-
-        
-
-
-
-
-
-    #print(palavra)
 
     
 
