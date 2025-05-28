@@ -140,10 +140,10 @@ def jogo_da_forca():
     for letra in palavra_escolhida:
 
         if letra == ' ':
-            qts_letras += ' ' 
+            qts_letras += '   ' 
 
         else:
-            qts_letras += '_'
+            qts_letras += '_ '
 
     
     qts_letras = list(qts_letras)
