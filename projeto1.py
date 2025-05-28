@@ -204,6 +204,8 @@ def jogo_da_forca():
     if '_' in qts_letras:
         print(forca(erros))
         print('Poxa, não foi dessa vez!')
+        print(f'A palavra ou termo era {palavra_escolhida}')
+
                 
     
 
