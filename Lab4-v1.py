@@ -92,8 +92,58 @@ class Hangman:
 
 
     def choose_word(self):
-         self.secret_word = random.choice(self.word_list)
+         self.secret_word = random.choice(self.word_list).upper()
          return self.secret_word
+    
+
+
+    def prepare_to_play(self):
+         
+         print("\nWelcome to the Cowboy Carter Hangman's Game\n")
+         print("GOOD LUCK! YOU MIGHT NEED IT ;-) \n")
+
+         self.how_many_letters = ''
+         self.wrong_choice = 0
+
+         
+
+
+         for letter in self.secret_word:
+              
+              if letter == ' ':
+                   self.how_many_letters += ' '
+               
+              elif letter in str(range(0,10)):
+                   self.how_many_letters += letter
+               
+              elif letter == "'":
+                   self.how_many_letters += letter
+               
+              elif letter == '★':
+                   self.how_many_letters += letter
+
+              else:
+                   self.how_many_letters += '_'
+
+          
+         self.how_many_letters = list(self.how_many_letters)
+
+         # Running tests
+     #     print(self.how_many_letters)
+     #     print(len(self.secret_word))
+     #     print(len(self.how_many_letters))
+
+
+         print(' '.join(self.how_many_letters))
+
+         self.word = [letter for letter in self.secret_word]
+
+         #print(self.word)
+                   
+                   
+
+
+         
     
  
 
@@ -121,4 +171,6 @@ lista_de_palavras = game.transform_the_file()
 
 palavra = game.choose_word()
 print(palavra)
+
+print(game.prepare_to_play())
 
