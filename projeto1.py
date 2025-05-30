@@ -147,7 +147,7 @@ def jogo_da_forca():
 
     
     qts_letras = list(qts_letras)
-    print(''.join(qts_letras))
+    print(' '.join(qts_letras))
 
 
     palavra = [letra for letra in palavra_escolhida]
